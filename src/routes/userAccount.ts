@@ -1,11 +1,11 @@
 import { Router, Request, Response } from "express";
 import axios from "axios";
 
-const router = Router();
+const userAcountRouter = Router();
 
 
 // Define a route that needs data from user-accounts microservice
-router.get("/status", async (req: Request, res: Response) => {
+userAcountRouter.get("/status", async (req: Request, res: Response) => {
     try {
         // Make a request to user-accounts microservice
         const response = await axios.get(`http://user-accounts-service/user/${req.params.id}`);
@@ -21,4 +21,4 @@ router.get("/status", async (req: Request, res: Response) => {
 
 
 
-export default router;
+export default  userAcountRouter;
